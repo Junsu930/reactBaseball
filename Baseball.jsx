@@ -1,26 +1,29 @@
-const React = require('react');
-const {Component} = React;
+import React, {Component} from 'react';
 
 // 숫자 4개를 겹치지 않고 뽑기
+function getNumbers(){
+
+}
 
 class Baseball extends Component {
     state = {
         result : '',
         value : '',
-        answer : '',
+        answer : getNumbers(),
         tries : {}
     };
 
-    onSubmitForm = ()=>{
+    onSubmitForm = e=>{
         
     };
 
     onChangeInput = () =>{
 
     };
-    
+    input;
+
     render(){
-        retrun(
+        return(
             <>
                 <h1>{this.state.result}</h1>
                 <form onSubmit={this.onSubmitForm}>
@@ -28,15 +31,21 @@ class Baseball extends Component {
                 </form>
                 <div>시도 : {this.state.tries.length}</div>
                 <ul>
-                {['like','like','like','like','like'].map((v)=>{
-                    return (
-                        <li>{v}</li>
-                    );
-                })}
-            </ul>
+                    {[
+                        {fruit:'사과',characteristic:'달다'},
+                        {fruit:'딸기',characteristic:'상큼하다'},
+                        {fruit:'배',characteristic:'아삭하다'},
+                        {fruit:'복숭아',characteristic:'달콤새콤'},
+                        {fruit:'포도',characteristic:'재밌다'},
+                    ].map((v)=>{
+                        return (
+                            <li key={v.fruit + v.characteristic}><b>{v.fruit}</b> - {v.characteristic}</li>
+                        );
+                    })}
+                </ul>
             </>
         );
     }
 }
 
-module.exports = Baseball;
+export default Baseball;

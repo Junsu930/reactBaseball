@@ -1,6 +1,6 @@
-const React = require('react');
-const ReactDom = require('react-dom/client');
+import React from 'react';
+import ReactDom from 'react-dom/client';
 
-const Baseball = require('./Baseball');
+import Baseball from './Baseball';
 
 ReactDom.createRoot(document.getElementById("root")).render(<Baseball/>);
